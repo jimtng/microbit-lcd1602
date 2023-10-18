@@ -1,7 +1,7 @@
 {
     "name": "lcd1602",
     "version": "0.1.0",
-    "description": "LCD1602液晶microbit扩展包",
+    "description": "LCD1602",
     "license": "MIT",
     "dependencies": {
         "core": "*"
