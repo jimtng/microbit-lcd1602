@@ -1,6 +1,6 @@
 {
     "name": "lcd1602",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "LCD1602",
     "license": "MIT",
     "dependencies": {
