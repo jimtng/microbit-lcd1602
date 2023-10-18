@@ -2,7 +2,7 @@
 * LCD1602 Screen Functions
 */
 
-//% weight=0 color=#794044 icon="\uf108" block="LCD1602液晶"
+//% weight=0 color=#794044 icon="\uf108" block="LCD1602"
 namespace lcd1602 {
     export let LCD_I2C_ADDR = 0x3f
     let buf = 0x00
