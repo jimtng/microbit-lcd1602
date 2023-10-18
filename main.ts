@@ -55,10 +55,10 @@ namespace lcd1602 {
         off = 0
     }
 
-    export enum visibled {
-        //% block="visibled"
+    export enum visibility {
+        //% block="visible"
         visible = 1,
-        //% block="invisibled"
+        //% block="invisible"
         invisible = 0
     }
 
@@ -73,7 +73,7 @@ namespace lcd1602 {
         setcmd(0x0C)
         setcmd(0x06)
         setcmd(0x01)
-    } 
+    }
 
     /**
      * 初始化I2C地址
@@ -109,7 +109,7 @@ namespace lcd1602 {
             else addr += 1
         }
         if (!k) return addr
-         addr = 0x38
+        addr = 0x38
         while (k && (addr < 0x40)) {
             pins.i2cWriteNumber(addr, -1, NumberFormat.Int32LE)
             d1 = pins.i2cReadNumber(addr, NumberFormat.Int8LE) % 16
@@ -159,7 +159,7 @@ namespace lcd1602 {
      */
     //% blockId="LCD_Show" block="set string %show"
     //% weight=47
-    export function set_LCD_Show(show: visibled): void {
+    export function set_LCD_Show(show: visibility): void {
         if (show == 1)
             setcmd(0x0C)
         else
@@ -171,7 +171,7 @@ namespace lcd1602 {
             let a = 0x80
             if (y == 1)
                 a = 0xC0
-	    if (y == 2)
+            if (y == 2)
                 a = 0x80 + 0x14
             if (y == 3)
                 a = 0xC0 + 0x14
@@ -200,14 +200,14 @@ namespace lcd1602 {
             }
         }
     }
-	
+
     /**
      * 打印数字
      */
     //% blockId="LCD_putNumber" block="LCD show number %n|on x:%x|y:%y"
     //% weight=48 blockExternalInputs=true x.min=0 x.max=15 y.min=0 y.max=1
     export function putNumber(n: number, x: number, y: number): void {
-        putString(n.toString(),x,y)
+        putString(n.toString(), x, y)
     }
 
     /**
